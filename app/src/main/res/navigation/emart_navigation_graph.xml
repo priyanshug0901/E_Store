@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/emart_navigation_graph"
+    app:startDestination="@+id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.android.e_mart.ui.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.android.e_mart.ui.fragments.CartFragment"
+        android:label="CartFragment" />
+
+    <fragment
+        android:id="@+id/wishListFragment"
+        android:name="com.android.e_mart.ui.fragments.WishListFragment"
+        android:label="WishListFragment" >
+        <action
+            android:id="@+id/action_wishListFragment_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailFragment"
+        android:name="com.android.e_mart.ui.fragments.ItemDetailFragment"
+        android:label="ItemDetailFragment" >
+        <action
+            android:id="@+id/action_itemDetailFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_itemDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>

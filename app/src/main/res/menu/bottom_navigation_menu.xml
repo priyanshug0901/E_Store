@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item android:id="@+id/homeFragment"
+        android:contentDescription="Home"
+        android:enabled="true"
+        android:title="Home"
+        android:iconTint="#FF5722"
+        android:icon="@drawable/twotone_home_24"
+        />
+
+    <item android:id="@+id/wishListFragment"
+        android:contentDescription="WishList"
+        android:title="WishList"
+        android:iconTint="#FF5722"
+        android:icon="@drawable/twotone_favorite_24"
+        />
+
+    <item android:id="@+id/cartFragment"
+        android:contentDescription="Cart"
+        android:title="Cart"
+        android:iconTint="#FF5722"
+        android:icon="@drawable/twotone_shopping_cart_24"
+        />
+
+
+</menu>
