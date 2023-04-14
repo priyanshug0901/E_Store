@@ -15,11 +15,9 @@ import com.android.e_mart.R
 import com.android.e_mart.adapters.CartItemAdapter
 import com.android.e_mart.dao.ProductTable
 import com.android.e_mart.databinding.CartFragmentBinding
-import com.android.e_mart.model.Product
 import com.android.e_mart.model.Products
 import com.android.e_mart.ui.viewModels.CartViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class CartFragment : Fragment() {
@@ -46,8 +44,6 @@ class CartFragment : Fragment() {
     }
 
     fun setNavigationCLickListener(products: ProductTable) {
-        //code
-        Toast.makeText(requireContext(), "adapter clicked", Toast.LENGTH_SHORT).show()
         val bundle = Bundle()
         val product = Products(
             products.brand,
@@ -76,16 +72,14 @@ class CartFragment : Fragment() {
     private fun setCartAdapter() {
         cartAdapter = CartItemAdapter(::setNavigationCLickListener, ::setCrossButtonClick)
         cartViewModel.getSavedItems().observe(viewLifecycleOwner) {
-            Log.d("@@@@", it.toString())
             cartAdapter.differ.submitList(it)
         }
     }
 
     private fun setCrossButtonClick(product: ProductTable) {
-                Log.d("@@@@", "cross clicked")
-                cartViewModel.removeItemFromCart(product)
-                updateOrderDetails()
-            }
+        cartViewModel.removeItemFromCart(product)
+        updateOrderDetails()
+    }
 
     fun updateOrderDetails() {
         var totalPrice = cartViewModel.getTotalCardPrice()

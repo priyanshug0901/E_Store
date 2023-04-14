@@ -10,17 +10,17 @@ import com.android.e_mart.model.Products
 import com.bumptech.glide.Glide
 import javax.inject.Inject
 
-class HomeItemAdapter (private val onProductClicked: (Products) -> Unit) :
+class HomeItemAdapter(private val onProductClicked: (Products) -> Unit) :
     RecyclerView.Adapter<HomeItemAdapter.HomeItemAdapterViewHolder>() {
 
-   inner class HomeItemAdapterViewHolder(homeItemAdapterBinding: ListItemAdapterBinding) :
+    inner class HomeItemAdapterViewHolder(homeItemAdapterBinding: ListItemAdapterBinding) :
         RecyclerView.ViewHolder(homeItemAdapterBinding.root) {
         val binding: ListItemAdapterBinding = homeItemAdapterBinding
-       fun setClickListener(product: Products){
-           binding.root.setOnClickListener{
-               onProductClicked(product)
-           }
-       }
+        fun setClickListener(product: Products) {
+            binding.root.setOnClickListener {
+                onProductClicked(product)
+            }
+        }
     }
 
 

@@ -20,7 +20,6 @@ import com.android.e_mart.model.Products
 import com.android.e_mart.ui.viewModels.HomeVieModel
 import com.android.e_mart.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {

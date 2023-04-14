@@ -24,14 +24,12 @@ class HomeVieModel @Inject constructor(
 
     init{
         getProducts()
-        Log.d("####", "get products called")
     }
 
     fun getProducts() {
         viewModelScope.launch{
             _productLiveData.postValue(Resource.Loading())
             val response = repository.getProducts()
-            Log.d("####", "data from server -> " + response.products.toString())
             _productLiveData.postValue(handleRepoResponse(response))
         }
     }

@@ -12,8 +12,8 @@ import javax.inject.Inject
 @HiltViewModel
 class CartViewModel @Inject constructor(private val cartRepository: CartRepository): ViewModel() {
 
-    fun removeItemFromCart(sneakerTable: ProductTable) {
-        cartRepository.removeItemFromCart(sneakerTable)
+    fun removeItemFromCart(product: ProductTable) {
+        cartRepository.removeItemFromCart(product)
     }
 
     fun getSavedItems(): LiveData<List<ProductTable>> {

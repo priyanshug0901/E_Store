@@ -7,10 +7,10 @@ import androidx.room.*
 interface CartDataAccessObject {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(product: ProductTable) : Long
+    suspend fun insert(product: ProductTable): Long
 
     @Query("SELECT * FROM productsCart")
-    fun getAllProducts() : LiveData<List<ProductTable>>
+    fun getAllProducts(): LiveData<List<ProductTable>>
 
     @Delete
     fun deleteProduct(product: ProductTable)
@@ -19,5 +19,5 @@ interface CartDataAccessObject {
     suspend fun deleteAllProducts()
 
     @Query("SELECT SUM(price) FROM productsCart")
-    fun totalPriceOfCart() : Int
+    fun totalPriceOfCart(): Int
 }
