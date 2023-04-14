@@ -5,30 +5,28 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import com.android.e_mart.R
 import com.android.e_mart.adapters.HomeItemAdapter
 import com.android.e_mart.databinding.HomeFragmentBinding
-import com.android.e_mart.databinding.ListItemAdapterBinding
 import com.android.e_mart.model.Products
 import com.android.e_mart.ui.viewModels.HomeVieModel
 import com.android.e_mart.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Objects
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     lateinit var binding: HomeFragmentBinding
     private val homeVieModel by viewModels<HomeVieModel>()
-    @Inject
+
     lateinit var homeItemAdapter: HomeItemAdapter
 
     override fun onCreateView(
@@ -38,6 +36,7 @@ class HomeFragment : Fragment() {
     ): View? {
          super.onCreateView(inflater, container, savedInstanceState)
         binding = DataBindingUtil.inflate(inflater, R.layout.home_fragment,container,false )
+        homeItemAdapter = HomeItemAdapter(::setNavigationCLickListener)
         return binding.root
     }
 
@@ -74,11 +73,15 @@ class HomeFragment : Fragment() {
             }
 
         })
-        setNavigationCLickListener()
+//        setNavigationCLickListener()
     }
 
     fun setNavigationCLickListener(products: Products) {
         //code
+        Toast.makeText(requireContext(), "adapter clicked", Toast.LENGTH_SHORT).show()
+        val bundle = Bundle()
+        bundle.putSerializable("products", products)
+        findNavController().navigate(R.id.action_homeFragment_to_itemDetailFragment, bundle)
     }
 
     private fun hideProgressBar() {

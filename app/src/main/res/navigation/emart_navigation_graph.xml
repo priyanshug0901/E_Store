@@ -20,11 +20,18 @@
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.android.e_mart.ui.fragments.CartFragment"
-        android:label="CartFragment" />
+        android:label="CartFragment" >
+        <argument
+            android:name="productTable"
+            app:argType="com.android.e_mart.dao.ProductTable" />
+        <action
+            android:id="@+id/action_cartFragment_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/wishListFragment"
-        android:name="com.android.e_mart.ui.fragments.WishListFragment"
+        android:name="com.android.e_mart.ui.fragments.SearchFragment"
         android:label="WishListFragment" >
         <action
             android:id="@+id/action_wishListFragment_to_itemDetailFragment"
@@ -41,8 +48,7 @@
             android:id="@+id/action_itemDetailFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
         <argument
-            android:name="Products"
-            app:argType="com.android.e_mart.model.Products"
-            app:nullable="true" />
+            android:name="products"
+            app:argType="com.android.e_mart.model.Products" />
     </fragment>
 </navigation>
