@@ -9,11 +9,11 @@
         android:icon="@drawable/twotone_home_24"
         />
 
-    <item android:id="@+id/wishListFragment"
-        android:contentDescription="WishList"
-        android:title="WishList"
+    <item android:id="@+id/searchFragment"
+        android:contentDescription="search"
+        android:title="Search"
         android:iconTint="#FF5722"
-        android:icon="@drawable/twotone_favorite_24"
+        android:icon="@drawable/twotone_search_24"
         />
 
     <item android:id="@+id/cartFragment"
