@@ -72,7 +72,19 @@ class CartFragment : Fragment() {
     private fun setCartAdapter() {
         cartAdapter = CartItemAdapter(::setNavigationCLickListener, ::setCrossButtonClick)
         cartViewModel.getSavedItems().observe(viewLifecycleOwner) {
+            setupCartFragmentView(it)
             cartAdapter.differ.submitList(it)
+        }
+    }
+
+    private fun setupCartFragmentView(productList : List<ProductTable>) {
+        if(productList.isEmpty()) {
+            binding.isEmpty = View.VISIBLE
+            binding.cartBillContainer.visibility = View.GONE
+            binding.checkoutContainer.visibility = View.GONE
+        }
+        else {
+            binding.isEmpty = View.GONE
         }
     }
 

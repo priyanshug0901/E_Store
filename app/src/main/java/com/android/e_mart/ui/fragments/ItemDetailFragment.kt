@@ -39,6 +39,7 @@ class ItemDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val product = args.products
         binding.product = product
+        binding.rating = product.rating.toInt()
         Glide.with(this).load(product.thumbnail).into(binding.itemScrollImageView)
 
         handleNavigationToCart(product)

@@ -9,7 +9,7 @@ data class Products(
     val discountPercentage: Double,
     val id: Int,
     val images: List<String>?,
-    val price: Int = 100 ,
+    val price: Int = 100,
     val rating: Double,
     val stock: Int,
     val thumbnail: String?,

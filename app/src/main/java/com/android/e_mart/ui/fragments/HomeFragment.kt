@@ -73,12 +73,10 @@ class HomeFragment : Fragment() {
             }
 
         })
-//        setNavigationCLickListener()
     }
 
     fun setNavigationCLickListener(products: Products) {
         //code
-        Toast.makeText(requireContext(), "adapter clicked", Toast.LENGTH_SHORT).show()
         val bundle = Bundle()
         bundle.putSerializable("products", products)
         findNavController().navigate(R.id.action_homeFragment_to_itemDetailFragment, bundle)
