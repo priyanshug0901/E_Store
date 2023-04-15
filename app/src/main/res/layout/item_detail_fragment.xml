@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="product"
             type="com.android.e_mart.model.Products" />
@@ -11,15 +12,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/product_detail_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/item_scrollImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="150dp"
             android:layout_marginTop="40dp"
+            android:minWidth="150dp"
             android:minHeight="150dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@{product.title}"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/item_price"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@{@string/currency(product.price)}"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@id/add_to_Cart_CTA"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
             android:layout_height="100dp"
             android:gravity="center"
             android:text="@{product.description}"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/add_to_Cart_CTA"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,11 +68,11 @@
             android:layout_height="50dp"
             android:layout_marginTop="106dp"
             android:backgroundTint="#FF8554"
-            android:drawableRight="@drawable/twotone_shopping_cart_24"
+            android:drawableEnd="@drawable/twotone_shopping_cart_24"
             android:drawableTint="@color/white"
-            android:text="Add To Cart"
+            android:text="@string/add_to_cart"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

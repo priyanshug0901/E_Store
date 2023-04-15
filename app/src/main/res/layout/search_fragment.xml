@@ -1,39 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <EditText
             android:id="@+id/search_box"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:drawableEnd="@drawable/twotone_search_24"
-            android:hint="Search Product"
-            android:inputType="text"
-            android:layout_marginEnd="15dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="15dp"
+            android:drawableEnd="@drawable/twotone_search_24"
+            android:hint="@string/searchbar_hint"
+            android:inputType="text"
             android:maxLines="1"
             android:minHeight="48dp"
             android:textColor="#DF4819"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/horizontal_barrier"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/search_fragment_recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_box" />
+            app:layout_constraintTop_toBottomOf="@+id/horizontal_barrier" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/horizontal_barrier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="search_box"
+            android:orientation="horizontal"
+            app:barrierDirection="bottom"
+            tools:layout_editor_absoluteX="411dp" />
 
         <ProgressBar
             android:id="@+id/pagination_progress_bar"

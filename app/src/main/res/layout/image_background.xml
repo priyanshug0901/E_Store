@@ -14,14 +14,15 @@
             android:id="@+id/slider_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/item_image_bg"
+            android:contentDescription="@string/item_image_description"
             android:minWidth="250dp"
             android:minHeight="250dp"
-            android:layout_centerInParent="true"
             android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background="@drawable/item_image_bg" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

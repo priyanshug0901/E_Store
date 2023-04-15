@@ -1,7 +1,7 @@
 package com.android.e_mart.hilt
 
-import com.android.e_mart.BaseApplication
+import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class EmartApplication : BaseApplication() {}
+class EmartApplication : Application() {}

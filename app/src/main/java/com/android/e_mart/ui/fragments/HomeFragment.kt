@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -13,6 +14,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.android.e_mart.R
 import com.android.e_mart.adapters.HomeItemAdapter
 import com.android.e_mart.databinding.HomeFragmentBinding
@@ -46,9 +49,7 @@ class HomeFragment : Fragment() {
 
         binding.homeFragmentRecyclerView.apply {
             adapter = homeItemAdapter
-            layoutManager = GridLayoutManager(activity, 2)
-            addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.HORIZONTAL))
-            addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         }
 
         // setupObserver

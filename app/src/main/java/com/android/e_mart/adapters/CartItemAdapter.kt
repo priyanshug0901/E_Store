@@ -14,8 +14,6 @@ import com.bumptech.glide.Glide
 class CartItemAdapter(private val onProductClicked: (ProductTable) -> Unit, private val onCrossClicked: (ProductTable) -> Unit) :
     Adapter<CartItemAdapter.CartItemViewHolder>() {
 
-    private var onClickListener: OnClickListener? = null
-
     inner class CartItemViewHolder(val binding: CartItemAdapterBinding) : ViewHolder(binding.root) {
         fun setOnClickListener(products: ProductTable) {
             binding.root.setOnClickListener {
@@ -67,11 +65,4 @@ class CartItemAdapter(private val onProductClicked: (ProductTable) -> Unit, priv
         }
     }
 
-    fun setOnClickListener(onClickListener: OnClickListener) {
-        this.onClickListener = onClickListener
-    }
-
-    interface OnClickListener {
-        fun onClick(product: ProductTable)
-    }
 }

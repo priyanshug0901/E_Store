@@ -13,6 +13,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.e_mart.R
 import com.android.e_mart.adapters.HomeItemAdapter
 import com.android.e_mart.databinding.SearchFragmentBinding
@@ -98,9 +99,7 @@ class SearchFragment : Fragment() {
         homeItemAdapter = HomeItemAdapter(::setNavigationCLickListener)
         binding.searchFragmentRecyclerView.apply {
             adapter = homeItemAdapter
-            layoutManager = GridLayoutManager(activity, 2)
-            addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.HORIZONTAL))
-            addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
+            layoutManager = LinearLayoutManager(activity)
         }
     }
 
